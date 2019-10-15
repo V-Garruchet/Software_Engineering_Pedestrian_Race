@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Course" table="Course">
+    <id name="Id" column="course_id" type="int">
+      <generator class="native"></generator>
+    </id>
+
+    <property name="Nom" column="course_nom" not-null="false"></property>
+    <property name="Longueur" column="course_longueur" not-null="false"></property>
+
+    <bag name="Resultats" inverse="true" lazy="true" cascade="none">
+      <key column="course_id" not-null="true"/>
+      <one-to-many class="Resultat" />
+    </bag>
+  </class>
+
+</hibernate-mapping>

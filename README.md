@@ -1,1 +1,2 @@
-# Software_Engineering_Pedestrian_Race
+# Projet
+Projet de génie logiciel
